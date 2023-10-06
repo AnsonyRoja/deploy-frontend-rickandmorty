@@ -20,7 +20,8 @@ const Nav = ({ onSearch, setAccess }) => {
             <div className="containerM">
                 <button className="menu-btn" onClick={handlerMenuClick}>Menu</button>
                 <ul className={`menu-items ${showMenu ? "show" : ""}`}>
-                    <li className="btnHome-menu">Home</li>
+                    <NavLink to="/home" className="btnHome-menu">Home</NavLink>
+                    <NavLink to="/favorites" className="btnHome-menu">Favorites</NavLink>
                     <NavLink to="/about" className="btnAbout-menu" >About</NavLink>
                 </ul>
             </div>
