@@ -75,11 +75,11 @@
     .email {
         width: 10%;
         font-size: 0.8em;
-        padding: 10px;
+
     }
 
     .password {
-        padding: 10px;
+
         width: 10%;
         font-size: 0.8em;
     }
@@ -88,6 +88,7 @@
     .inputPassword {
         width: 90%;
         margin-bottom: 10px;
+        margin-top: 10px;
         /* Agregar un margen inferior para separar los inputs en pantallas pequeñas */
     }
 }
