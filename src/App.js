@@ -130,7 +130,7 @@ function App() {
    return (
       <div className='App'>
 
-         {location.pathname === '/' ? <div className='fondo'>
+         {location.pathname === '/' && access === false ? <div className='fondo'>
 
             {location.pathname === '/' ? <TextoRickM /> : null}
             <Routes>
