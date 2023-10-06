@@ -52,7 +52,7 @@
 /* Estilos para hacerlo responsive */
 @media screen and (max-width: 768px) {
     .favorite {
-        width: 100%;
+        width: 5rem;
         /* Ajustar el ancho al 100% en pantallas pequeñas */
     }
 
