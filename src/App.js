@@ -147,7 +147,7 @@ function App() {
             location.pathname !== '/' && <Nav onSearch={onSearch} onSearchByname={onSearchByname} setAccess={setAccess} />
          }
 
-         {location.pathname === '/' && access ? <Redirect to='/home' /> : null}
+         {location.pathname === '/' && access ? <Cards characters={characters} access={access} onClose={onClose} /> : null}
 
          <Routes>
             <Route path='/favorites' element={<Favorites />} />
