@@ -75,6 +75,16 @@
         /* Ajustar el ancho al 90% en pantallas pequeñas */
     }
 
+    .email {
+        position: absolute;
+        font-size: 0.8em;
+    }
+
+    .password {
+        position: absolute;
+        font-size: 0.8em;
+    }
+
     .inputEmail,
     .inputPassword {
         margin-bottom: 10px;
