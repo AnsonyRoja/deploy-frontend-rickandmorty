@@ -7,6 +7,17 @@
     border-radius: 15%;
 }
 
+.helpUser {
+
+    color: rgb(184, 13, 207);
+    font-weight: bold;
+    margin-right: 5px;
+    padding: 6px 10px;
+    border-radius: 15%;
+    font-size: 15px;
+
+}
+
 .buttons {
     margin-top: 1vw;
     background-color: rgb(184, 13, 207);
