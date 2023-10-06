@@ -34,6 +34,8 @@ function App() {
          const { data } = await axios(`https://servidor-rickandmorty-pwak.onrender.com/rickandmorty/character/${name}`);
 
 
+         console.log(data);
+
          const getCharacter = setCharacters((oldChars) => [...oldChars, data]);
 
          alert("Character added to the list!");
