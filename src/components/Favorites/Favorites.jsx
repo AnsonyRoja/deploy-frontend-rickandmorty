@@ -1,7 +1,7 @@
 import Card from '../Card/Card.jsx';
 import { connect, useDispatch } from 'react-redux';
 import { filterCards, orderCards } from '../../redux/actions.js';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Favorite.module.css';
 import { getFav } from '../../redux/actions.js';
 
@@ -10,20 +10,30 @@ const Favorites = ({ myFavorites, getFav }) => {
     const dispatch = useDispatch();
     const [aux, setAux] = useState(false);
 
+
+
     const handleOrder = (event) => {
 
         dispatch(orderCards(event.target.value));
         setAux(true);
-        getFav();
+
 
     }
 
     const handleFilter = (event) => {
 
         dispatch(filterCards(event.target.value))
-        getFav();
 
     }
+
+
+    useEffect(() => {
+
+        getFav()
+
+    }, [handleOrder, handleFilter])
+
+
     return (
 
         <div className={styles.contenedor}>
