@@ -1,0 +1,47 @@
+body {
+
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  
+}
+
+
+  
+
+.person{
+
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgb(46, 46, 209);
+
+}
+
+
+.RM{
+
+  width: 28em;
+
+}
+
+
+
+.rickAndMorty{
+margin: auto;
+  width: 500px;
+
+}
+
+.rickAndMorty img{
+ 
+  width: 35em;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+

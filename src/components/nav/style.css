@@ -1,0 +1,192 @@
+/* Estilos para la sección principal */
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: black;
+    border-radius: 10px;
+    width: 100%;
+    height: 60px;
+    color: cyan;
+    /* Color del texto en cyan */
+}
+
+.containerM {
+    display: none;
+}
+
+.linked {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    /* Tamaño de fuente para los enlaces */
+    font-weight: bold;
+    /* Texto en negrita */
+}
+
+.linked:hover {
+    color: white;
+    background-color: cyan;
+    /* Color de fondo en cyan al pasar el cursor */
+    border-radius: 5px;
+    /* Borde redondeado al pasar el cursor */
+}
+
+/* Estilos para el botón de menú desplegable */
+.menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    background-color: cyan;
+    /* Color de fondo en cyan */
+    color: black;
+    /* Color del texto en negro */
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    /* Texto en negrita */
+    border-radius: 5px;
+    /* Borde redondeado para el botón */
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    /* Transiciones suaves en los cambios de color y escala */
+}
+
+.menu-btn:hover {
+    background-color: black;
+    /* Color de fondo en negro al pasar el cursor */
+    color: cyan;
+    /* Color del texto en cyan al pasar el cursor */
+    transform: scale(1.05);
+    /* Efecto de escala al pasar el cursor */
+}
+
+/* Estilos para los enlaces del menú desplegable */
+.menu-items {
+    display: none;
+    flex-direction: column;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-items.show {
+    display: flex;
+}
+
+.btnHome-menu,
+.btnAbout-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background-color: black;
+
+    color: cyan;
+    /* Color del texto en cyan */
+    text-decoration: none;
+    font-weight: bold;
+    /* Texto en negrita */
+    border-radius: 5px;
+    /* Borde redondeado para los enlaces */
+    margin: 5px 0;
+    /* Espaciado vertical entre los enlaces */
+}
+
+.btnHome-menu:hover,
+.btnAbout-menu:hover {
+    background-color: cyan;
+    /* Color de fondo en cyan al pasar el cursor */
+    color: black;
+    /* Color del texto en negro al pasar el cursor */
+    transform: scale(1.05);
+    /* Efecto de escala al pasar el cursor */
+}
+
+/* Estilos para los botones en el contenedor de la derecha */
+.containerBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnAbout,
+.btnHome,
+.btnHome:hover {
+    font-weight: bold;
+    /* Texto en negrita */
+    width: 120px;
+    /* Ajusta el ancho según tus preferencias */
+    background-color: cyan;
+    /* Color de fondo en cyan */
+    height: 40px;
+    border: none;
+    color: black;
+    /* Color del texto en negro */
+    cursor: pointer;
+    margin: 0 5px;
+    /* Añade un pequeño margen horizontal entre los botones */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    /* Transiciones suaves en los cambios de color y escala */
+    border-radius: 5px;
+    /* Borde redondeado para los botones */
+}
+
+.btnHome:hover {
+    background-color: black;
+    /* Color de fondo en negro al pasar el cursor */
+    color: cyan;
+    /* Color del texto en cyan al pasar el cursor */
+    transform: scale(1.05);
+    /* Efecto de escala al pasar el cursor */
+}
+
+/* Media query para hacer la barra de navegación responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        /* Cambia la dirección de los elementos a columna */
+        height: auto;
+        /* Altura automática para ajustarse al contenido */
+    }
+
+    .containerBtn {
+        display: none;
+        /* Esconde la botonera cuando la resolución es menor a 768px */
+    }
+
+    .containerM {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        /* Muestra el containerM con un pequeño margen en la parte superior */
+        background-color: gray;
+        border-radius: 10px;
+        /* Borde redondeado para el contenedor */
+        padding: 10px;
+        /* Añade un poco de espaciado interno */
+    }
+
+    .menu-btn {
+        margin-bottom: 10px;
+        /* Añade un pequeño margen en la parte inferior */
+    }
+
+    .menu-items.show {
+        display: flex;
+        flex-direction: column;
+        /* Cambia la dirección de los elementos a columna cuando el menú está abierto */
+    }
+}

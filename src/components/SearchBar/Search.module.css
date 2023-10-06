@@ -1,0 +1,42 @@
+
+.btn{
+
+    background-color: rgb(232, 248, 8);
+    border: none;
+    padding: 5px;
+    font-weight: bolder;
+}
+
+.btn:hover{
+    color:#fff;
+    
+    background-color: rgb(127, 127, 232);
+}
+
+.input{
+    
+    width: 15em;
+    padding: 4px;
+    margin-right: 5px;
+    outline: none;
+}
+
+.div{
+    
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+   display: flex;
+  
+}
+
+.cont{
+    display: flex;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color:rgba(107, 107, 208,0.5) ;
+    justify-content: center;
+    align-items: center;
+
+}

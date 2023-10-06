@@ -1,0 +1,27 @@
+/* Estilos para la imagen */
+.RM {
+    width: 100%;
+    max-width: 400px;
+    /* Ajusta el ancho máximo según tus preferencias para dispositivos más grandes */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* Centra la imagen horizontalmente */
+    animation: spin 3s linear forwards;
+    /* Aplica la animación de giro */
+}
+
+/* Definición de la animación de giro */
+@keyframes spin {
+    0% {
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(-1);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}

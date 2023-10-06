@@ -1,0 +1,85 @@
+.favorite {
+    position: absolute;
+    display: flex;
+    background-color: cyan;
+    width: 15rem;
+    padding: 5px;
+    justify-content: center;
+    margin-top: 1rem;
+    border-radius: 5vw;
+}
+
+.selector {
+    background-color: cyan;
+    color: black;
+    font-weight: bold;
+}
+
+.selectorFilter {
+    color: rgba(0, 0, 0, 0.8);
+    background-color: cyan;
+    font-weight: bold;
+}
+
+.containerCards {
+
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(100, 50, 110);
+    width: 100%;
+
+    margin-top: 7px;
+    border-radius: 15px;
+    padding: 1.5em;
+}
+
+.cards {
+    margin-top: 3rem;
+    margin-left: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    /* Add flex-wrap property to wrap the cards */
+    justify-content: center;
+    /* Center the cards horizontally */
+
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos para hacerlo responsive */
+@media screen and (max-width: 768px) {
+    .favorite {
+        width: 100%;
+        /* Ajustar el ancho al 100% en pantallas pequeñas */
+    }
+
+    .cards {
+        /* No need to change anything for responsiveness as the flex-wrap property handles it */
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+/* Estilos adicionales para hacerlo más llamativo */
+.favorite:hover {
+    transform: scale(1.05);
+}
+
+.selector:hover,
+.selectorFilter:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.cards {
+    transition: all 0.3s ease-in-out;
+}
+
+.cards:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
