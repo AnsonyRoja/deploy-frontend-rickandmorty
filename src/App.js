@@ -113,9 +113,16 @@ function App() {
 
       if (storedAccessToken) {
          setAccess(storedAccessToken);
+
+
+         if (location.pathname === '/home') {
+            navigate('/home');
+         }
+
       } else {
          !access && navigate('/');
       }
+
 
    }, [access, navigate])
 
@@ -130,16 +137,13 @@ function App() {
    return (
       <div className='App'>
 
-         {
-            (location.pathname === '/' && access === false) || location.pathname !== '/' ? (
-               <div className='fondo'>
-                  {location.pathname === '/' && <TextoRickM />}
-                  <Routes>
-                     <Route path='/' element={<Form login={login} />} />
-                  </Routes>
-               </div>
-            ) : null
-         }
+         {location.pathname === '/' ? <div className='fondo'>
+
+            {location.pathname === '/' && <TextoRickM />}
+            <Routes>
+               <Route path='/' element={<Form login={login} />} />
+            </Routes>
+         </div> : null}
 
          {
             // location.pathname !== '/' ? <Nav onSearch={onSearch}/> : null
