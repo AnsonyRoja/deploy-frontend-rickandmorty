@@ -1,10 +1,15 @@
 import Card from '../Card/Card';
 import { CardsContainer } from "./styledComponents";
 import { useEffect } from 'react';
+import { getFav } from '../../redux/actions';
+import { connect } from 'react-redux';
+export function Cards({ characters, onClose, getFav }) {
 
+   useEffect(() => {
 
-export default function Cards({ characters, onClose }) {
+      getFav()
 
+   }, [])
 
 
    return (
@@ -38,3 +43,6 @@ export default function Cards({ characters, onClose }) {
       </CardsContainer>
    );
 }
+
+
+export default connect(null, { getFav })(Cards);
