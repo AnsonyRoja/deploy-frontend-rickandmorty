@@ -23,6 +23,7 @@ const Nav = ({ onSearch, setAccess }) => {
                     <NavLink to="/home" className="btnHome-menu">Home</NavLink>
                     <NavLink to="/favorites" className="btnHome-menu">Favorites</NavLink>
                     <NavLink to="/about" className="btnAbout-menu" >About</NavLink>
+                    <button className="btnHome-menu" onClick={handleLogout}>Log Out</button>
                 </ul>
             </div>
 
