@@ -3,9 +3,10 @@ import { connect, useDispatch } from 'react-redux';
 import { filterCards, orderCards } from '../../redux/actions.js';
 import { useState } from 'react';
 import styles from './Favorite.module.css';
+import { getFav } from '../../redux/actions.js';
 
 
-const Favorites = ({ myFavorites }) => {
+const Favorites = ({ myFavorites, getFav }) => {
     const dispatch = useDispatch();
     const [aux, setAux] = useState(false);
 
@@ -13,13 +14,14 @@ const Favorites = ({ myFavorites }) => {
 
         dispatch(orderCards(event.target.value));
         setAux(true);
+        getFav();
 
     }
 
     const handleFilter = (event) => {
 
         dispatch(filterCards(event.target.value))
-
+        getFav();
 
     }
     return (
@@ -83,6 +85,14 @@ const mapStateToProps = (state) => {
 
 }
 
+const mapDispatchToProps = (dispatch) => {
 
-export default connect(mapStateToProps, null)(Favorites);
+    return {
+
+        getFav: () => dispatch(getFav())
+    }
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
 
