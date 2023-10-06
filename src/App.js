@@ -97,7 +97,6 @@ function App() {
          access && navigate('/home');
 
 
-
       } catch (error) {
 
          console.log(error.message);
@@ -123,14 +122,6 @@ function App() {
    }, [access, navigate])
 
 
-   useEffect(() => {
-
-      if (access && location.pathname === '/') {
-         return <Redirect to="/home" />;
-      }
-
-   }, [access, location.pathname])
-
    const onClose = (id) => {
 
       const charactersFiltered = characters?.filter(character => character.id !== Number(id));
@@ -143,7 +134,7 @@ function App() {
       <div className='App'>
 
 
-         {location.pathname === '/' ? <div className='fondo'>
+         {location.pathname === '/' && !access ? <div className='fondo'>
 
             {location.pathname === '/' && <TextoRickM />}
             <Routes>
