@@ -36,7 +36,7 @@ function App() {
 
          console.log(data);
 
-         const getCharacter = setCharacters((oldChars) => [...oldChars, data]);
+         const getCharacter = setCharacters(data.results);
 
          alert("Character added to the list!");
 
