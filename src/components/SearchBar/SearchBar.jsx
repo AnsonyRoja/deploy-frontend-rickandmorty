@@ -1,43 +1,60 @@
 import styles from './Search.module.css';
 import { useState } from 'react';
 
-
 export default function SearchBar({ onSearch, onSearchByname }) {
    const [id, setId] = useState('');
    const [name, setName] = useState('');
 
    const handleChange = (event) => {
-
-      if (typeof event.target.value === 'string') {
-         onSearchByname(name);
-         setName(event.target.value);
+      const value = event.target.value;
+      if (event.target.name === 'id') {
+         setId(value);
+      } else if (event.target.name === 'name') {
+         setName(value);
       }
-
-      if (typeof event.target.value === 'number') {
-
-         onSearch(id);
-         setId(event.target.value);
-      }
-
    }
-   const handlerEnter = (event) => {
 
+   const handleSearchById = () => {
+      onSearch(id);
+      setId('');
+   }
+
+   const handleSearchByName = () => {
+      onSearchByname(name);
+      setName('');
+   }
+
+   const handleEnter = (event) => {
       if (event.key === 'Enter') {
-         onSearchByname(name);
-         onSearch(id);
-         setId('');
+         handleSearchById();
+         handleSearchByName();
       }
-
    }
 
    return (
       <div className={styles.div}>
-
          <div className={styles.cont}>
-            <input className={styles.input} placeholder='id...' type='search' onKeyUp={handlerEnter} onChange={handleChange} value={id} />
-            <button className={styles.btn} onClick={() => { onSearch(id); setId('') }}>Agregar</button>
+            <input
+               className={styles.input}
+               placeholder='id...'
+               type='search'
+               name='id'
+               onKeyUp={handleEnter}
+               onChange={handleChange}
+               value={id}
+            />
+            <input
+               className={styles.input}
+               placeholder='name...'
+               type='search'
+               name='name'
+               onKeyUp={handleEnter}
+               onChange={handleChange}
+               value={name}
+            />
+            <button className={styles.btn} onClick={handleSearchById}>Buscar por ID</button>
+            <button className={styles.btn} onClick={handleSearchByName}>Buscar por Nombre</button>
          </div>
-
       </div>
    );
 }
