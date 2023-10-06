@@ -3,11 +3,11 @@ import { CardsContainer } from "./styledComponents";
 import { useEffect } from 'react';
 import { getFav } from '../../redux/actions';
 import { connect } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export function Cards({ characters, onClose, getFav, access }) {
    const location = useLocation();
-
+   const navigate = useNavigate();
    useEffect(() => {
 
       getFav()
@@ -20,11 +20,11 @@ export function Cards({ characters, onClose, getFav, access }) {
 
       if (location.pathname === '/' && access === true) {
 
-         location.pathname = '/home';
+         navigate('/home')
 
       }
 
-   }, [access])
+   }, [access, location.pathname])
 
 
    return (
