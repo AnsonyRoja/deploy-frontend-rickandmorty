@@ -27,11 +27,7 @@ const Favorites = ({ myFavorites, getFav }) => {
     }
 
 
-    useEffect(() => {
 
-        getFav()
-
-    }, [handleOrder, handleFilter])
 
 
     return (
