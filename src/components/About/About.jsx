@@ -20,7 +20,7 @@ const About = () => {
 
                 <h3>Futbol:</h3> me gusta jugar y ver fútbol. Soy un gran fanático del Real Madrid.
 
-                <h3>Videojuegos:</h3> me encanta jugar videojuegos. Me gusta jugar juegos de rol como league of legends, moba, etc.
+                <h3>Videojuegos:</h3> me encanta jugar videojuegos. me gusta jugar juegos de rol como league of legends, moba, etc.
 
 
 
