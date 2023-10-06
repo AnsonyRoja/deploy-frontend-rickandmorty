@@ -3,23 +3,17 @@ import { CardsContainer } from "./styledComponents";
 import { useEffect } from 'react';
 import { getFav } from '../../redux/actions';
 import { connect } from 'react-redux';
-import { useLocation, useNavigate, Redirect } from 'react-router-dom';
+
 
 export function Cards({ characters, onClose, getFav, access }) {
-   const location = useLocation();
-   const navigate = useNavigate();
+
    useEffect(() => {
 
       getFav()
 
-
-
    }, [])
 
 
-   if (location.pathname === '/home' && access === true) {
-      return <Redirect to="/home" />;
-   }
 
 
    return (
