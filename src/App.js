@@ -33,15 +33,10 @@ function App() {
 
          const { data } = await axios(`https://servidor-rickandmorty-pwak.onrender.com/rickandmorty/character/${name}`);
 
-         const characterRepeat = characters?.find((char) => char.id === data.id);
 
-         if (characterRepeat) {
+         const getCharacter = setCharacters((oldChars) => [...oldChars, data]);
 
-            alert('Already in the list!')
-         } else if (data.id !== undefined) {
-            setCharacters((oldChars) => [...oldChars, data]);
-         }
-
+         alert("Character added to the list!");
 
       } catch (error) {
 
