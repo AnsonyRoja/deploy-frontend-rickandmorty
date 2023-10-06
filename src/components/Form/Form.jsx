@@ -47,8 +47,8 @@ const Form = ({ login }) => {
 
         <form onSubmit={handledSubmit}>
 
-
-            <label htmlFor="email" className={styles.email}> <span className={styles.helpUser} onClick={toggleMensaje}>?</span>Email</label>
+            <span className={styles.helpUser} onClick={toggleMensaje}>?</span>
+            <label htmlFor="email" className={styles.email}>Email</label>
             <input type="email" className={styles.inputEmail} name="email" value={userData.email} onChange={handleChange} />
             <label htmlFor="password" className={styles.password}>Password</label>
             <input type="password" className={styles.inputPassword} name="password" value={userData.password} onChange={handleChange} />
