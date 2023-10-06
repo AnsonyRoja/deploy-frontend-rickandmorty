@@ -134,7 +134,7 @@ function App() {
       <div className='App'>
 
 
-         {location.pathname === '/' && access ? <div className='fondo'>
+         {location.pathname === '/' ? <div className='fondo'>
 
             {location.pathname === '/' && <TextoRickM />}
             <Routes>
