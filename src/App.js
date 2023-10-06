@@ -7,7 +7,7 @@ import Detail from './components/Detail/Detail';
 import Favorites from './components/Favorites/Favorites';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { Redirect, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Form from './components/Form/Form';
 import { useDispatch } from 'react-redux';
 import { removeFav } from './redux/actions';
@@ -115,16 +115,21 @@ function App() {
          setAccess(storedAccessToken);
 
 
-         if (location.pathname === '/home') {
-            navigate('/home');
-         }
-
       } else {
          !access && navigate('/');
       }
 
 
    }, [access, navigate])
+
+
+   useEffect(() => {
+
+      if (access && location.pathname === '/') {
+         return <Redirect to="/home" />;
+      }
+
+   }, [access, location.pathname])
 
    const onClose = (id) => {
 
@@ -136,6 +141,7 @@ function App() {
 
    return (
       <div className='App'>
+
 
          {location.pathname === '/' ? <div className='fondo'>
 
