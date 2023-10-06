@@ -91,6 +91,8 @@ function App() {
 
          setAccess(access);
 
+         localStorage.setItem('accessToken', access);
+
          access && navigate('/home');
 
 
@@ -106,7 +108,14 @@ function App() {
 
 
    useEffect(() => {
-      !access && navigate('/');
+      const storedAccessToken = localStorage.getItem('accessToken');
+
+      if (storedAccessToken) {
+         setAccess(storedAccessToken);
+      } else {
+         !access && navigate('/');
+      }
+
    }, [access, navigate])
 
    const onClose = (id) => {
