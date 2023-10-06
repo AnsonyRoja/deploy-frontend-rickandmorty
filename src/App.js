@@ -35,7 +35,8 @@ function App() {
 
 
 
-         const getCharacter = setCharacters(data.results);
+         setCharacters(data.results);
+
 
 
 
@@ -122,7 +123,6 @@ function App() {
 
       const charactersFiltered = characters?.filter(character => character.id !== Number(id));
       setCharacters(charactersFiltered);
-      console.log(charactersFiltered);
       dispatch(removeFav(id));
 
    }

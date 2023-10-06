@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { useEffect } from 'react';
 
 
-export function Cards({ characters, onClose, getFav }) {
+export function Cards({ characters, onClose, getFav, myFavorites }) {
 
 
    useEffect(() => {
@@ -47,13 +47,23 @@ export function Cards({ characters, onClose, getFav }) {
    );
 }
 
+const mapStateToProps = state => {
+
+   return {
+
+      myFavorites: state.myFavorites,
+
+   }
+
+}
 
 const mapDispatchToProps = dispatch => {
 
    return {
 
       getFav: () => dispatch(getFav())
+
    }
 }
 
-export default connect(null, mapDispatchToProps)(Cards);
+export default connect(mapStateToProps, mapDispatchToProps)(Cards);

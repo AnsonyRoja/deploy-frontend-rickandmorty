@@ -27,7 +27,12 @@ const Favorites = ({ myFavorites, getFav }) => {
     }
 
 
+    useEffect(() => {
 
+
+        getFav()
+
+    }, [])
 
 
     return (
