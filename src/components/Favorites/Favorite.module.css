@@ -2,7 +2,7 @@
     position: absolute;
     display: flex;
     background-color: cyan;
-    width: 10rem;
+    width: 15rem;
     padding: 5px;
     justify-content: center;
     margin-top: 1rem;
@@ -52,7 +52,7 @@
 /* Estilos para hacerlo responsive */
 @media screen and (max-width: 768px) {
     .favorite {
-        width: 5rem;
+        width: 20rem;
         /* Ajustar el ancho al 100% en pantallas pequeñas */
     }
 
