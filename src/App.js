@@ -150,7 +150,7 @@ function App() {
 
          <Routes>
             <Route path='/favorites' element={<Favorites />} />
-            <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
+            {location.pathname === "/" && access ? <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} /> : null}
             <Route path='/about' element={<About />} />
             <Route path='/Detail/:id' element={<Detail />} />
 
