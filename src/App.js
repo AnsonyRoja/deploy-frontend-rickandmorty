@@ -130,13 +130,16 @@ function App() {
    return (
       <div className='App'>
 
-         {location.pathname === '/' && access === false ? <div className='fondo'>
-
-            {location.pathname === '/' ? <TextoRickM /> : null}
-            <Routes>
-               <Route path='/' element={<Form login={login} />} />
-            </Routes>
-         </div> : null}
+         {
+            (location.pathname === '/' && access === false) || location.pathname !== '/' ? (
+               <div className='fondo'>
+                  {location.pathname === '/' && <TextoRickM />}
+                  <Routes>
+                     <Route path='/' element={<Form login={login} />} />
+                  </Routes>
+               </div>
+            ) : null
+         }
 
          {
             // location.pathname !== '/' ? <Nav onSearch={onSearch}/> : null
