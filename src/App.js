@@ -25,6 +25,32 @@ function App() {
    //      setCharacters([...characters, example])
    // }
    // .then(({ data }) => {
+
+   const onSearchByname = async (name) => {
+
+
+      try {
+
+         const { data } = await axios(`https://servidor-rickandmorty-pwak.onrender.com/rickandmorty/character/${name}`);
+
+         const characterRepeat = characters?.find((char) => char.id === data.id);
+
+         if (characterRepeat) {
+
+            alert('Already in the list!')
+         } else if (data.id !== undefined) {
+            setCharacters((oldChars) => [...oldChars, data]);
+         }
+
+
+      } catch (error) {
+
+         alert('Character Not exist')
+
+      }
+
+
+   }
    const onSearch = async (id) => {
 
       try {
@@ -109,7 +135,7 @@ function App() {
 
          {
             // location.pathname !== '/' ? <Nav onSearch={onSearch}/> : null
-            location.pathname !== '/' && <Nav onSearch={onSearch} access={access} setAccess={setAccess} />
+            location.pathname !== '/' && <Nav onSearch={onSearch} onSearchByname={onSearchByname} access={access} setAccess={setAccess} />
          }
 
 

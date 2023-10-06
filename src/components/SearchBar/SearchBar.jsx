@@ -2,17 +2,28 @@ import styles from './Search.module.css';
 import { useState } from 'react';
 
 
-export default function SearchBar({ onSearch }) {
+export default function SearchBar({ onSearch, onSearchByname }) {
    const [id, setId] = useState('');
+   const [name, setName] = useState('');
 
    const handleChange = (event) => {
-      setId(event.target.value);
+
+      if (typeof event.target.value === 'string') {
+         onSearchByname(name);
+         setName(event.target.value);
+      }
+
+      if (typeof event.target.value === 'number') {
+
+         onSearch(id);
+         setId(event.target.value);
+      }
 
    }
    const handlerEnter = (event) => {
 
       if (event.key === 'Enter') {
-
+         onSearchByname(name);
          onSearch(id);
          setId('');
       }

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import './style.css';
 
-const Nav = ({ onSearch, setAccess }) => {
+const Nav = ({ onSearch, setAccess, onSearchByname }) => {
     const [showMenu, setShowMenu] = useState(false);
 
     const handlerMenuClick = () => {
@@ -16,7 +16,7 @@ const Nav = ({ onSearch, setAccess }) => {
 
     return (
         <div className="container">
-            <SearchBar onSearch={onSearch} />
+            <SearchBar onSearch={onSearch} onSearchByname={onSearchByname} />
             <div className="containerM">
                 <button className="menu-btn" onClick={handlerMenuClick}>Menu</button>
                 <ul className={`menu-items ${showMenu ? "show" : ""}`}>
