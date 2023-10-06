@@ -7,7 +7,7 @@ import Detail from './components/Detail/Detail';
 import Favorites from './components/Favorites/Favorites';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Redirect, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Form from './components/Form/Form';
 import { useDispatch } from 'react-redux';
 import { removeFav } from './redux/actions';
@@ -147,7 +147,7 @@ function App() {
             location.pathname !== '/' && <Nav onSearch={onSearch} onSearchByname={onSearchByname} setAccess={setAccess} />
          }
 
-         {location.pathname === '/' && access ? navigate('/home') : null}
+         {location.pathname === '/' && access && navigate('/home')}
 
          <Routes>
             <Route path='/favorites' element={<Favorites />} />
