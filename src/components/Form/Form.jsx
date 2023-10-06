@@ -2,8 +2,8 @@
 import { useState } from "react";
 import validation from "../Validation/Validation";
 import styles from './Form.module.css'
-import ojo from '../../assets/ojo.png';
-import invisible from '../../assets/invisible.png';
+import ojo from '../assets/img/ojo.png';
+import invisible from '../assets/img/invisible.png';
 
 const Form = ({ login }) => {
     const [showPassword, setShowPassword] = useState(false);
