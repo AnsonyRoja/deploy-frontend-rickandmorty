@@ -5,6 +5,7 @@ import styles from './Form.module.css'
 
 
 const Form = ({ login }) => {
+    const [showPassword, setShowPassword] = useState(false);
     const [errors, setErrors] = useState({});
     const [userData, setUserData] = useState({
 
@@ -43,6 +44,10 @@ const Form = ({ login }) => {
         setMostrarMensaje(!mostrarMensaje);
     }
 
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+
     return (
 
         <form onSubmit={handledSubmit}>
@@ -51,8 +56,10 @@ const Form = ({ login }) => {
             <label htmlFor="email" className={styles.email}>Email</label>
             <input type="email" className={styles.inputEmail} name="email" value={userData.email} onChange={handleChange} />
             <label htmlFor="password" className={styles.password}>Password</label>
-            <input type="password" className={styles.inputPassword} name="password" value={userData.password} onChange={handleChange} />
-
+            <input type={showPassword ? 'text' : "password"} className={styles.inputPassword} name="password" value={userData.password} onChange={handleChange} />
+            <span onClick={togglePasswordVisibility}>
+                {showPassword ? '👁️' : '🗨️'}
+            </span>
             <div className={styles.divs}>
                 {errors.email && <p style={{ color: "white", fontWeight: 'bolder', width: '250px' }}>{errors.email}</p>}
                 {errors.password && <p style={{ color: "white", fontWeight: 'bolder', width: '250px' }}>{errors.password}</p>}
