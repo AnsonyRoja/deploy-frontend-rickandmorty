@@ -11,7 +11,7 @@ const Nav = ({ onSearch, setAccess, onSearchByname }) => {
     }
 
     const handleLogout = () => {
-        localStorage.setItem('accessToken', false);
+        localStorage.clear();
         setAccess(false);
     }
 
