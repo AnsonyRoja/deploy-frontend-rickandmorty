@@ -134,7 +134,7 @@ function App() {
       <div className='App'>
 
 
-         {location.pathname === '/' ? <div className='fondo'>
+         {location.pathname === '/' && !access ? <div className='fondo'>
 
             {location.pathname === '/' && <TextoRickM />}
             <Routes>
@@ -144,13 +144,13 @@ function App() {
 
          {
             // location.pathname !== '/' ? <Nav onSearch={onSearch}/> : null
-            location.pathname !== '/' && <Nav onSearch={onSearch} onSearchByname={onSearchByname} access={access} setAccess={setAccess} />
+            location.pathname !== '/' && <Nav onSearch={onSearch} onSearchByname={onSearchByname} setAccess={setAccess} />
          }
 
 
          <Routes>
             <Route path='/favorites' element={<Favorites />} />
-            <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
+            <Route path='/home' element={<Cards characters={characters} access={access} onClose={onClose} />} />
             <Route path='/about' element={<About />} />
             <Route path='/Detail/:id' element={<Detail />} />
 
