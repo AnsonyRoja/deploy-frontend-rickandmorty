@@ -31,7 +31,7 @@ function App() {
 
       try {
 
-         const { data } = await axios(`https://servidor-rickandmorty-pwak.onrender.com/rickandmorty/character/${name}`);
+         const { data } = await axios(`https://servidor-rickandmorty-pwak.onrender.com/rickandmorty/character/name/${name}`);
 
 
          console.log(data);
