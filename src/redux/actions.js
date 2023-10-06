@@ -1,5 +1,35 @@
-import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./actions-types";
+import { GET_FAV, ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./actions-types";
 import axios from 'axios';
+
+
+export const getFav = () => {
+
+
+    const endpoint = 'https://servidor-rickandmorty-pwak.onrender.com/rickandmorty/fav';
+
+    return async (dispatch) => {
+
+        try {
+
+            const { data } = await axios.get(endpoint);
+
+            if (!data.length) throw Error('No Found Character Favorite');
+
+            return dispatch({
+
+                type: GET_FAV,
+                payload: data,
+
+            });
+
+        } catch (error) {
+
+            console.log(error.message);
+
+        }
+    }
+
+}
 
 export const addFav = (character) => {
 
@@ -7,6 +37,7 @@ export const addFav = (character) => {
     return async (dispatch) => {
 
         try {
+
 
             const { data } = await axios.post(endpoint, character);
 

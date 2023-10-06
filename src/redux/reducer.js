@@ -1,6 +1,6 @@
 
 
-import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./actions-types";
+import { GET_FAV, ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./actions-types";
 
 const initialState = {
 
@@ -31,6 +31,14 @@ const reducer = (state = initialState, { type, payload }) => {
         ...state,
         myFavorites: payload,
         allCharacters: payload,
+      }
+
+    case GET_FAV:
+
+      return {
+
+        ...state,
+        myFavorites: payload,
       }
 
     case FILTER:
