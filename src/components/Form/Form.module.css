@@ -70,23 +70,21 @@
         /* Ajustar el ancho al 100% en pantallas pequeñas */
     }
 
-    .divs {
-        width: 90%;
-        /* Ajustar el ancho al 90% en pantallas pequeñas */
-    }
+
 
     .email {
-
+        width: 10%;
         font-size: 0.8em;
     }
 
     .password {
-
+        width: 10%;
         font-size: 0.8em;
     }
 
     .inputEmail,
     .inputPassword {
+        width: 90%;
         margin-bottom: 10px;
         /* Agregar un margen inferior para separar los inputs en pantallas pequeñas */
     }
