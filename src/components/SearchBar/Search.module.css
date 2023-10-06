@@ -13,7 +13,8 @@
 }
 
 .input {
-
+    background-color: white;
+    color: black;
     width: 15em;
     padding: 4px;
     margin-right: 5px;
