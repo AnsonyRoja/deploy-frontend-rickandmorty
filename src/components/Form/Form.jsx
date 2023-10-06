@@ -59,7 +59,7 @@ const Form = ({ login }) => {
             <label htmlFor="password" className={styles.password}>Password</label>
             <input type={showPassword ? 'text' : "password"} className={styles.inputPassword} name="password" value={userData.password} onChange={handleChange} />
             <span onClick={togglePasswordVisibility}>
-                {showPassword ? <img src={ojo} alt="ojo-abierto" /> : <img src={invisible} alt="ojo-cerrado" />}
+                {showPassword ? <img className={styles.ojo} src={ojo} alt="ojo-abierto" /> : <img className={styles.invisible} src={invisible} alt="ojo-cerrado" />}
             </span>
             <div className={styles.divs}>
                 {errors.email && <p style={{ color: "white", fontWeight: 'bolder', width: '250px' }}>{errors.email}</p>}

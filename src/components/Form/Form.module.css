@@ -7,6 +7,15 @@
     border-radius: 15%;
 }
 
+.ojo {
+    width: 150px;
+}
+
+.invisible {
+
+    width: 150px;
+}
+
 .helpUser {
 
     color: white;
