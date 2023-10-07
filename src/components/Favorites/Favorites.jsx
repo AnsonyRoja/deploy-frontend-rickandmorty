@@ -41,8 +41,8 @@ const Favorites = ({ myFavorites, getFav }) => {
             <div className={styles.favorite}>
                 <select className={styles.selector} onChange={handleOrder}>
 
-                    <option value="A">Ascendente</option>
-                    <option value="D">Descendente</option>
+                    <option value="A">A-Z</option>
+                    <option value="D">Z-A</option>
 
                 </select>
 
