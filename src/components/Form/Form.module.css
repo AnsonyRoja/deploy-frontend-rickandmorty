@@ -8,12 +8,13 @@
 }
 
 .ojo {
-    width: 150px;
+    width: 15px;
+    margin-left: 5px;
 }
 
 .invisible {
 
-    width: 150px;
+    width: 15px;
 }
 
 .helpUser {
