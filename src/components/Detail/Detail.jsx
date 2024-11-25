@@ -10,7 +10,7 @@ const Detail = () => {
 
 
     useEffect(() => {
-        axios(`https://servidor-rickandmorty-pwak.onrender.com/rickandmorty/character/${id}`)
+        axios(`https://deploy-backend-rickandmorty.onrender.com/rickandmorty/character/${id}`)
             .then(response => response.data)
             .then((data) => {
                 if (data.name) {

@@ -5,7 +5,7 @@ import axios from 'axios';
 export const getFav = () => {
 
 
-    const endpoint = 'https://servidor-rickandmorty-pwak.onrender.com/rickandmorty/fav';
+    const endpoint = 'https://deploy-backend-rickandmorty.onrender.com/rickandmorty/fav';
 
     return async (dispatch) => {
 
@@ -33,7 +33,7 @@ export const getFav = () => {
 
 export const addFav = (character) => {
 
-    const endpoint = 'https://servidor-rickandmorty-pwak.onrender.com/rickandmorty/fav';
+    const endpoint = 'https://deploy-backend-rickandmorty.onrender.com/rickandmorty/fav';
     return async (dispatch) => {
 
         try {
@@ -63,7 +63,7 @@ export const addFav = (character) => {
 
 export const removeFav = (id) => {
 
-    const endpoint = `https://servidor-rickandmorty-pwak.onrender.com/rickandmorty/fav/${id}`;
+    const endpoint = `https://deploy-backend-rickandmorty.onrender.com/rickandmorty/fav/${id}`;
 
     return async (dispatch) => {
 

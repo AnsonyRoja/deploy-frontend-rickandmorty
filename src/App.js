@@ -20,7 +20,7 @@ function App() {
    const location = useLocation();
    const [characters, setCharacters] = useState([]);
    const navigate = useNavigate();
-   const URL = 'https://servidor-rickandmorty-pwak.onrender.com/rickandmorty/login/';
+   const URL = 'https://deploy-backend-rickandmorty.onrender.com/rickandmorty/login/';
    // const onSearch = ()=>{
    //      setCharacters([...characters, example])
    // }
@@ -31,7 +31,7 @@ function App() {
 
       try {
 
-         const { data } = await axios(`https://servidor-rickandmorty-pwak.onrender.com/rickandmorty/character/name/${name}`);
+         const { data } = await axios(`https://deploy-backend-rickandmorty.onrender.com/rickandmorty/character/name/${name}`);
 
 
 
@@ -53,7 +53,7 @@ function App() {
       try {
 
 
-         const { data } = await axios(`https://servidor-rickandmorty-pwak.onrender.com/rickandmorty/character/${id}`)
+         const { data } = await axios(`https://deploy-backend-rickandmorty.onrender.com/rickandmorty/character/${id}`)
 
 
          const characterRepeat = characters?.find((char) => char.id === data.id);
